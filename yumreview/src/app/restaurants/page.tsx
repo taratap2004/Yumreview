@@ -1,74 +1,102 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { supabase } from '../../../lib/supabase';
-import Link from 'next/link';
+
 
 type Restaurant = {
   id: string;
   name: string;
   description: string;
   image_url: string;
-  avg_rating: number; // ค่าเฉลี่ยคะแนนรีวิว
+  location: string;
+  opening_hours: string;
+  contact: string;
+  menu: { name: string; price: number }[];
+  reviews: { rating: number; comment: string; user: string }[];
+  avg_rating: number;
 };
 
-export default function RestaurantsPage() {
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
-  const [searchQuery, setSearchQuery] = useState('');
+export default function RestaurantDetailPage({ params }: { params: { id: string } }) {
+  const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchRestaurants = async () => {
-      const { data, error } = await supabase
-        .from('restaurants')
-        .select('*, avg_rating:reviews(rating)'); // ดึงคะแนนเฉลี่ยด้วย
+    const fetchRestaurant = async () => {
+      setLoading(true);
+      setError(null);
 
-      if (error) console.error(error);
-      else {
-        // คำนวณค่าเฉลี่ยรีวิว
-        const processedData = data.map((restaurant) => ({
-          ...restaurant,
-          avg_rating: restaurant.avg_rating.length
-            ? restaurant.avg_rating.reduce((acc: number, r: { rating: number }) => acc + r.rating, 0) / restaurant.avg_rating.length
-            : 0,
-        }));
-        
-        setRestaurants(processedData);
+      try {
+        const { data, error } = await supabase
+          .from('restaurants')
+          .select('*, reviews(rating, comment, user), menu(name, price)')
+          .eq('id', params.id)
+          .single();
+
+        if (error) throw error;
+
+        // คำนวณคะแนนเฉลี่ย
+        const avg_rating = data.reviews.length
+          ? data.reviews.reduce((acc: number, r: { rating: number }) => acc + r.rating, 0) / data.reviews.length
+          : 0;
+
+        setRestaurant({ ...data, avg_rating });
+      } catch (err) {
+        setError('เกิดข้อผิดพลาดในการดึงข้อมูลร้านอาหาร');
+        console.error(err);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchRestaurants();
-  }, []);
+    fetchRestaurant();
+  }, [params.id]);
 
-  // ค้นหาตามชื่อร้าน
-  const filteredRestaurants = restaurants
-    .filter((r) => r.name.toLowerCase().includes(searchQuery.toLowerCase()))
-    .sort((a, b) => b.avg_rating - a.avg_rating); // จัดอันดับร้านตามคะแนนรีวิว
+  if (loading) return <p>กำลังโหลด...</p>;
+  if (error) return <p>{error}</p>;
+  if (!restaurant) return <p>ไม่พบข้อมูลร้านอาหาร</p>;
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">🍽 ร้านอาหารแนะนำ</h1>
+      {/* รูปภาพร้านอาหาร */}
+      <img src={restaurant.image_url} alt={restaurant.name} className="w-full h-64 object-cover rounded-lg" />
 
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="🔍 ค้นหาร้านอาหาร..."
-        className="border p-2 w-full rounded-md mb-4"
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+      {/* รายละเอียดร้าน */}
+      <h1 className="text-3xl font-bold mt-4">{restaurant.name}</h1>
+      <p className="text-gray-600 mt-2">{restaurant.description}</p>
+      <div className="mt-4">
+        <p><strong>ที่ตั้ง:</strong> {restaurant.location}</p>
+        <p><strong>เวลาเปิด-ปิด:</strong> {restaurant.opening_hours}</p>
+        <p><strong>ติดต่อ:</strong> {restaurant.contact}</p>
+      </div>
 
-      {/* Restaurant List */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {filteredRestaurants.map((restaurant) => (
-          <Link key={restaurant.id} href={`/restaurants/${restaurant.id}`} className="border rounded-lg shadow-md hover:shadow-lg transition">
-            <img src={restaurant.image_url} alt={restaurant.name} className="w-full h-48 object-cover rounded-t-lg" />
-            <div className="p-4">
-              <h2 className="text-xl font-bold">{restaurant.name}</h2>
-              <p className="text-gray-600">{restaurant.description}</p>
-              <p className="text-yellow-500 mt-2">⭐ {restaurant.avg_rating.toFixed(1)} / 5</p>
-            </div>
-          </Link>
+      {/* เมนูแนะนำ */}
+      <h2 className="text-2xl font-bold mt-6">เมนูแนะนำ</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        {restaurant.menu.map((item, index) => (
+          <div key={index} className="border p-4 rounded-lg">
+            <p className="text-lg font-semibold">{item.name}</p>
+            <p className="text-gray-600">{item.price} บาท</p>
+          </div>
         ))}
+      </div>
+
+      {/* รีวิวจากผู้ใช้ */}
+      <h2 className="text-2xl font-bold mt-6">รีวิวจากผู้ใช้</h2>
+      <div className="mt-4">
+        {restaurant.reviews.map((review, index) => (
+          <div key={index} className="border p-4 rounded-lg mb-4">
+            <p className="text-yellow-500">⭐ {review.rating} / 5</p>
+            <p className="text-gray-600">{review.comment}</p>
+            <p className="text-sm text-gray-400">โดย {review.user}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* คะแนนเฉลี่ย */}
+      <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
+        <p className="text-xl font-bold">คะแนนเฉลี่ย: ⭐ {restaurant.avg_rating.toFixed(1)} / 5</p>
       </div>
     </div>
   );
 }
-
