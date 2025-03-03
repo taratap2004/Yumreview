@@ -65,8 +65,5 @@ export default function HomePage() {
       </section>
     </div>
   );
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> a1445b1e33693c4dd0cf8b0910db465dfbf0904e
