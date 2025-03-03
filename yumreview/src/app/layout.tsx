@@ -1,16 +1,14 @@
-// app/layout.tsx
-import { ReactNode } from 'react';
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+import Navbar from '../components/Navbar'; // นำเข้า Navbar
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>YumReview</title>
-      </head>
       <body>
-        {children} {/* This renders the content of your page */}
+        <Navbar /> {/* แสดง Navbar */}
+        {children}
       </body>
     </html>
   );

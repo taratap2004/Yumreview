@@ -1,15 +1,18 @@
-import Link from 'next/link'
-
-export default function Navbar() {
+import Link from 'next/link';
+import { Home, LogIn } from 'react-feather';
+const Navbar = () => {
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-white text-lg font-bold">YumReview</Link>
-        <div className="flex space-x-4">
-          <Link href="/login" className="text-white">Login</Link>
-          <input type="text" placeholder="Search..." className="p-2 rounded" />
-        </div>
+    <nav className="flex justify-between items-center p-4 bg-white border-b border-gray-200">
+      <div className="text-xl font-bold">YumReview</div>
+      <div className="flex items-center space-x-4">
+        <Link href="/">
+          <Home size={24} className="text-gray-800 hover:text-gray-600" />
+        </Link>
+        <Link href="/login">
+          <LogIn size={24} className="text-gray-800 hover:text-gray-600" />
+        </Link>
       </div>
     </nav>
-  )
-}
+  );
+};
+export default Navbar;

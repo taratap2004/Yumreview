@@ -45,6 +45,16 @@ export async function POST(req: Request) {
 
         return NextResponse.json({ user: data.user, token: data.session?.access_token })
     }
-    return NextResponse.json({ error: 'Invalid action' }, { status: 400 })
 
+    if (action === 'logout') {
+        // ออกจากระบบ
+        const { error } = await supabase.auth.signOut()
+
+        if (error) {
+            return NextResponse.json({ error: `Error logging out: ${error.message}` }, { status: 401 })
+        }
+        return NextResponse.json({ error: 'Invalid action' }, { status: 400 })
+
+
+    }
 }

@@ -23,7 +23,9 @@ export default function LoginPage() {
       <input type="email" placeholder="Email" className="border p-2 my-2" onChange={(e) => setEmail(e.target.value)} />
       <input type="password" placeholder="Password" className="border p-2 my-2" onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleLogin} className="bg-blue-500 text-white px-4 py-2 mt-2">Login</button>
-      <link onClick={() => router.push('/register')} className="bg-green-500 text-white px-4 py-2 mt-2">Register</link>
+      <button onClick={() => router.push('/register')} className="bg-green-500 text-white px-4 py-2 mt-2">
+        Register
+      </button>
     </div>
   );
 }

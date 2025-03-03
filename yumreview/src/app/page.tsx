@@ -1,4 +1,4 @@
-// app/page.tsx
+
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -35,9 +35,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="p-6">
-      <button className="text-3xl font-bold text-center mb-6 " onClick={() => router.push('/')}>YumReview</button>
-      <button className="text-3xl font-bold text-center mb-6 " onClick={() => router.push('/login')}>Login</button>
+    <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {restaurants.length === 0 ? (
           <p>กำลังโหลดข้อมูลร้านอาหาร...</p>
