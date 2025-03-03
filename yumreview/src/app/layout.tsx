@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'; // นำเข้า Navbar
+import "./globals.css";
 export default function RootLayout({
   children,
 }: {
