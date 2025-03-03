@@ -2,10 +2,12 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import CategoryButtons from '../components/CategoryButtons';
 import RestaurantCard from '../components/RestaurantCard';
+import Navbar from '@/components/Navbar';
 
 const HomePage: React.FC = () => {
   return (
     <div>
+      <Navbar />
       <SearchBar />
       <CategoryButtons />
       <h2>รายการแนะนำ</h2>
