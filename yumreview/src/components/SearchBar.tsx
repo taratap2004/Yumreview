@@ -2,26 +2,28 @@
 import React from 'react';
 
 const SearchBar: React.FC = () => {
-    return (
-        <div>
-            <div className="container">
-                <img src="/food.jpg" alt="Delicious food in Korat" className="image" />
-                <div className="search-container">
-                    <input type="text" placeholder="search...." className="input" />
-                    <button className="search-button">ค้นหา</button>
-                </div>
-                <p className="text">ตามหาร้านอร่อยในโคราช เราคัดสรรมาให้คุณแล้ว</p>
-            </div>
-            <style jsx>{`
+  return (
+    <div>
+      <div className="container">
+        <img src="/food.jpg" alt="Delicious food in Korat" className="image" />
+        <div className="search-container">
+          <input type="text" placeholder="search...." className="input" />
+          <button className="search-button">ค้นหา</button>
+        </div>
+        <p className="text">ตามหาร้านอร่อยในโคราช เราคัดสรรมาให้คุณแล้ว</p>
+      </div>
+      <style jsx>{`
         .container {
           position: relative;
           background-color: lightyellow;
         }
         .image {
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-        }
+         width: 100%;
+        height: 400px;
+        object-fit: cover;
+       border-radius: 15px; /* ปรับขอบมน */
+       }
+
         .search-container {
           position: absolute;
           top: 50%;
@@ -32,35 +34,42 @@ const SearchBar: React.FC = () => {
           z-index: 2;
         }
         .input {
-          padding: 10px;
-          width: 300px;
-          border: 1px solid #ccc;
-          border-radius: 5px 0 0 5px; /* ปรับขอบด้านซ้าย */
-          outline: none;
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 25px; /* ทำให้ช่องป้อนข้อมูลโค้งมน */
+        outline: none;
+        margin-top: -10px;
         }
+
         .search-button {
-          padding: 10px 20px;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          border-radius: 0 5px 5px 0; /* ปรับขอบด้านขวา */
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
+        padding: 10px 20px;
+        background-color: #3399FF;
+        color: white;
+        border: none;
+        border-radius: 25px; /* ทำให้ปุ่มโค้งมน */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+}
         .search-button:hover {
           background-color: #0056b3; /* เปลี่ยนสีเมื่อโฮเวอร์ */
         }
         .text {
-          position: absolute;
-          top: 65%;
-          left: 50%;
-          transform: translateX(-50%);
-          color: white;
-          font-size: 1.2rem;
-          z-index: 2;
-          padding: 5px 10px;
-          border-radius: 5px;
-        }
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 1.25rem; /* ลดขนาดลงเล็กน้อย */
+       font-weight: 600; /* ทำให้ไม่หนามากเกินไป */
+       font-family: "Nunito", sans-serif; /* ใช้ฟอนต์ที่ดูดี */
+       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* เงาเบาลง */
+       z-index: 2;
+       padding: 6px 12px; /* ลด padding ให้ขนาดกระชับขึ้น */
+       border-radius: 8px; /* ทำให้ขอบมนขึ้นแต่ไม่มากไป */
+} 
+
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -79,8 +88,8 @@ const SearchBar: React.FC = () => {
           }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default SearchBar;
