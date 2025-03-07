@@ -4,9 +4,9 @@ import React from 'react';
 const SearchBar: React.FC = () => {
   return (
     <div>
-      <div className="container">
+      <div className="container" >
         <img src="/food.jpg" alt="Delicious food in Korat" className="image" />
-        <div className="search-container">
+        <div className="search-container ">
           <input type="text" placeholder="search...." className="input" />
           <button className="search-button">ค้นหา</button>
         </div>
@@ -18,13 +18,16 @@ const SearchBar: React.FC = () => {
           background-color: lightyellow;
         }
         .image {
+        
          width: 100%;
-        height: 400px;
-        object-fit: cover;
-       border-radius: 15px; /* ปรับขอบมน */
+         height: 250px;
+         object-fit: cover;
+         border-radius: 15px; /* ปรับขอบมน */
        }
 
         .search-container {
+         display:flex;
+         align-items: center;
           position: absolute;
           top: 50%;
           left: 50%;
@@ -35,7 +38,7 @@ const SearchBar: React.FC = () => {
         }
         .input {
         padding: 10px;
-        width: 300px;
+        width: 450px;
         border: 1px solid #ccc;
         border-radius: 25px; /* ทำให้ช่องป้อนข้อมูลโค้งมน */
         outline: none;
@@ -43,13 +46,16 @@ const SearchBar: React.FC = () => {
         }
 
         .search-button {
+        
         padding: 10px 20px;
+         width: auto;
         background-color: #3399FF;
         color: white;
         border: none;
         border-radius: 25px; /* ทำให้ปุ่มโค้งมน */
         cursor: pointer;
         transition: background-color 0.3s ease;
+        margin-top: -10px;
 }
         .search-button:hover {
           background-color: #0056b3; /* เปลี่ยนสีเมื่อโฮเวอร์ */
