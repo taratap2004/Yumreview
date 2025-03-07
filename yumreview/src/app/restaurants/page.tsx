@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../../../lib/supabase';
 
-
+// กำหนดประเภทข้อมูล
 type Restaurant = {
   id: string;
   name: string;
@@ -12,13 +12,17 @@ type Restaurant = {
   opening_hours: string;
   contact: string;
   menu: { name: string; price: number }[];
-  reviews: { rating: number; comment: string; user: string }[];
-  avg_rating: number;
 };
 
-export default function RestaurantDetailPage({ params }: { params: { id: string } }) {
+type RestaurantDetailPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default function RestaurantDetailPage({ params }: RestaurantDetailPageProps) {
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -27,23 +31,24 @@ export default function RestaurantDetailPage({ params }: { params: { id: string 
       setError(null);
 
       try {
+        console.log('Fetching restaurant with ID:', params.id); // ตรวจสอบ ID
+
         const { data, error } = await supabase
           .from('restaurants')
-          .select('*, reviews(rating, comment, user), menu(name, price)')
+          .select('*, menu(name, price)') // ลบ reviews ออก
           .eq('id', params.id)
           .single();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Supabase error:', error); // แสดงข้อผิดพลาดจาก Supabase
+          throw error;
+        }
 
-        // คำนวณคะแนนเฉลี่ย
-        const avg_rating = data.reviews.length
-          ? data.reviews.reduce((acc: number, r: { rating: number }) => acc + r.rating, 0) / data.reviews.length
-          : 0;
-
-        setRestaurant({ ...data, avg_rating });
+        console.log('Fetched data:', data); // ตรวจสอบข้อมูลที่ได้รับ
+        setRestaurant(data as Restaurant);
       } catch (err) {
         setError('เกิดข้อผิดพลาดในการดึงข้อมูลร้านอาหาร');
-        console.error(err);
+        console.error('Error:', err); // แสดงข้อผิดพลาดทั้งหมด
       } finally {
         setLoading(false);
       }
@@ -80,23 +85,6 @@ export default function RestaurantDetailPage({ params }: { params: { id: string 
           </div>
         ))}
       </div>
-
-      {/* รีวิวจากผู้ใช้ */}
-      <h2 className="text-2xl font-bold mt-6">รีวิวจากผู้ใช้</h2>
-      <div className="mt-4">
-        {restaurant.reviews.map((review, index) => (
-          <div key={index} className="border p-4 rounded-lg mb-4">
-            <p className="text-yellow-500">⭐ {review.rating} / 5</p>
-            <p className="text-gray-600">{review.comment}</p>
-            <p className="text-sm text-gray-400">โดย {review.user}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* คะแนนเฉลี่ย */}
-      <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
-        <p className="text-xl font-bold">คะแนนเฉลี่ย: ⭐ {restaurant.avg_rating.toFixed(1)} / 5</p>
-      </div>
     </div>
   );
-}
+}  
