@@ -29,33 +29,32 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between items-center p-3 bg-white border-gray-200 ">
+    <nav className="flex justify-between items-center p-4 bg-white border-gray-200 ">
       <Link href="/">
-        <div className="text-4xl font-bold text-purple-700 ">
+        <div className="text-4xl font-bold text-black ">
           YumReview
         </div>
       </Link>
 
-      <div className="flex items-center space-x-4 ">
-        {/* ปุ่ม Profile */}
+      <div className="flex items-center space-x-4">
         {user ? (
-         <div className="relative z-50">
+         <div className="relative">
          <button
            onClick={() => setShowLogout(!showLogout)}
-           className="p-2 rounded-lg hover:bg-gray-100 transition duration-200"
+           className="p-2 rounded-lg hover:bg-gray-100 transition duration-200 cursor-pointer" 
          >
            <User size={24} className="text-purple-700" />
          </button>
        
          {/* เมนู Logout */}
-         {showLogout && user.id && (
-           <div className="fixed right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg ">
+         {showLogout && (
+           <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-[99]">
              <button
                onClick={handleLogout}
-               className="block w-full text-center px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors duration-200"
+               className="block w-full text-center px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors duration-200 cursor-pointer"
              >
-               <LogOut size={24} className="text-purple-700" />
-             </button>
+               <LogOut size={24} className="text-purple-700" /> 
+              </button>
            </div>
          )}
        </div>

@@ -52,7 +52,7 @@ export default function LoginPage() {
         <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">
           Login
         </button>
-        <button type="button" className="bg-blue-500 text-white p-2 rounded-md" onClick={() => router.push('/register')}> 
+        <button type="button" className="bg-blue-500 text-white p-2 rounded-md cursor-pointer" onClick={() => router.push('/register')}> 
           Register
         </button>
       </form>

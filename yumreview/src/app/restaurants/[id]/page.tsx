@@ -7,6 +7,9 @@ type Restaurant = {
   name: string;
   description: string;
   image_url: string;
+  image_url1: string;
+  image_url2: string;
+  image_url3: string;
   location: string;
   opening_hours: string;
   contact: string;
@@ -49,14 +52,21 @@ export default function RestaurantDetailPage() {
   if (!restaurant) return <p>ไม่พบข้อมูลร้านอาหาร</p>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">{restaurant.name}</h1>
-      <img src={restaurant.image_url} alt={restaurant.name} className="w-full h-64 object-cover rounded-lg" />
-      <div className="mt-4">
-        <p><strong>รายละเอียด:</strong> {restaurant.description}</p>
-        <p><strong>ที่ตั้ง:</strong> {restaurant.location}</p>
-        <p><strong>เวลาเปิด-ปิด:</strong> {restaurant.opening_hours}</p>
-        <p><strong>ติดต่อ:</strong> {restaurant.contact}</p>
+    <div className="restaurant-detail">
+      <h1>{restaurant.name}</h1>
+      <img src={restaurant.image_url} alt={restaurant.name} />
+      <div className="description">
+      <img src={restaurant.image_url1} alt={restaurant.name}></img> 
+      <p>{restaurant.description}</p>
+      <img src={restaurant.image_url2} alt={restaurant.name}></img> 
+      <p>{restaurant.description}</p>
+      <img src={restaurant.image_url3} alt={restaurant.name}></img> 
+      <p>{restaurant.description}</p>
+      <div className="contact-info">
+      <p><strong>ที่ตั้ง:</strong> {restaurant.location}</p>
+      <p><strong>เวลาเปิด-ปิด:</strong> {restaurant.opening_hours}</p>
+      <p><strong>ติดต่อ:</strong> {restaurant.contact}</p>
+      </div>
       </div>
     </div>
   );

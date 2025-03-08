@@ -50,15 +50,17 @@ export default function RestaurantDetailPage() {
   if (!restaurant) return <p>ไม่พบข้อมูลร้านอาหาร</p>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">{restaurant.name}</h1>
+    <div className="restaurant-detail">
+      <h1 style={{ fontSize: '2rem' }}>{restaurant.name}</h1>
       <img src={restaurant.image_url} alt={restaurant.name} className="w-full h-64 object-cover rounded-lg" />
       <div className="mt-4">
-        <p><strong>รายละเอียด:</strong> {restaurant.description}</p>
+        <p><img src="/description-icon.png" alt="Description Icon" className="w-4 h-4 inline-block mr-2"></img> {restaurant.description}</p>
+        <p><img src="/description-icon.png" alt="Description Icon" className="w-4 h-4 inline-block mr-2"></img> {restaurant.description}</p>
+        <p><img src="/description-icon.png" alt="Description Icon" className="w-4 h-4 inline-block mr-2"></img> {restaurant.description}</p>
         <p><strong>ที่ตั้ง:</strong> {restaurant.location}</p>
         <p><strong>เวลาเปิด-ปิด:</strong> {restaurant.opening_hours}</p>
         <p><strong>ติดต่อ:</strong> {restaurant.contact}</p>
       </div>
     </div>
-  );
+  );  
 }

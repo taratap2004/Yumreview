@@ -10,24 +10,7 @@ interface RestaurantCardProps {
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ id, name, imageUrl }) => {
     return (
         <Link href={`/restaurants/${id}`} passHref>
-            <div
-                style={{
-                    width: '350px',
-                    height: '400px',
-                    border: '1px solid #ccc',
-                    borderRadius: '10px',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    margin: '10px', // เพิ่มระยะห่างระหว่างการ์ด
-                }}
-                className="restaurant-card"
-            >
-                {/* รูปภาพ */}
+            <div className="restaurant-card">
                 <img
                     src={imageUrl}
                     alt={name}
@@ -35,14 +18,18 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ id, name, imageUrl }) =
                         width: '100%',
                         height: '300px',
                         objectFit: 'cover',
+                        borderRadius: '10px 10px  0 0',
                     }}
                 />
                 <p
                     style={{
+                        backgroundColor: 'white',
                         textAlign: 'center',
                         fontSize: '1.2rem',
                         padding: '10px',
                         color: '#333',
+                        fontWeight: 'bold',
+                        borderRadius: '0 0 10px 10px',
                     }}
                 >
                     {name}

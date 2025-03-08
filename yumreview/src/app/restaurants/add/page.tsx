@@ -6,7 +6,12 @@ import { useRouter } from 'next/navigation';
 export default function AddRestaurantPage() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [description1, setDescription1] = useState('');
+  const [description2, setDescription2] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [imageUrl1, setImageUrl1] = useState('');
+  const [imageUrl2, setImageUrl2] = useState('');
+  const [imageUrl3, setImageUrl3] = useState('');
   const [location, setLocation] = useState('');
   const [openingHours, setOpeningHours] = useState('');
   const [contact, setContact] = useState('');
@@ -17,7 +22,7 @@ export default function AddRestaurantPage() {
 
     const { data, error } = await supabase
       .from('restaurants')
-      .insert([{ name, description, image_url: imageUrl, location, opening_hours: openingHours, contact }]);
+      .insert([{ name, description, description1, description2, image_url: imageUrl, image_url1: imageUrl1, image_url2: imageUrl2, image_url3: imageUrl3, location: location, opening_hours: openingHours, contact}]);
 
     if (error) {
       console.error('Error adding restaurant:', error);
@@ -43,6 +48,26 @@ export default function AddRestaurantPage() {
           />
         </div>
         <div>
+          <label className="block text-sm font-medium text-gray-700">URL รูปภาพหลัก</label>
+          <input
+            type="text"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)} 
+            className="w-full p-2 border rounded-md"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">รูปภาพ</label>
+          <input
+            type="text"
+            value={imageUrl1}
+            onChange={(e) => setImageUrl1(e.target.value)} 
+            className="w-full p-2 border rounded-md"
+            required
+          />
+        </div>
+        <div>
           <label className="block text-sm font-medium text-gray-700">คำอธิบาย</label>
           <textarea
             value={description}
@@ -52,11 +77,39 @@ export default function AddRestaurantPage() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">URL รูปภาพหลัก</label>
+          <label className="block text-sm font-medium text-gray-700">รูปภาพ</label>
           <input
             type="text"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)} 
+            value={imageUrl2}
+            onChange={(e) => setImageUrl2(e.target.value)} 
+            className="w-full p-2 border rounded-md"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">คำอธิบาย</label>
+          <textarea
+            value={description1}
+            onChange={(e) => setDescription1(e.target.value)}
+            className="w-full p-2 border rounded-md"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">รูปภาพ</label>
+          <input
+            type="text"
+            value={imageUrl3}
+            onChange={(e) => setImageUrl3(e.target.value)} 
+            className="w-full p-2 border rounded-md"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">คำอธิบาย</label>
+          <textarea
+            value={description2}
+            onChange={(e) => setDescription2(e.target.value)}
             className="w-full p-2 border rounded-md"
             required
           />
@@ -91,7 +144,7 @@ export default function AddRestaurantPage() {
             required
           />
         </div>
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
           เพิ่มร้านอาหาร
         </button>
       </form>

@@ -4,21 +4,16 @@ import React from 'react';
 const SearchBar: React.FC = () => {
   return (
     <div>
-      <div className="container" >
+      <div className="relative w-full h-64 overflow-hidden rounded-lg" >
         <img src="/food.jpg" alt="Delicious food in Korat" className="image" />
         <div className="search-container ">
           <input type="text" placeholder="search...." className="input" />
           <button className="search-button">ค้นหา</button>
         </div>
-        <p className="text">ตามหาร้านอร่อยในโคราช เราคัดสรรมาให้คุณแล้ว</p>
+          <p className="text" >ค้นหาร้านอาหารร้านอร่อยในโคราช เราคัดสรรมาให้คุณแล้ว</p>
       </div>
       <style jsx>{`
-        .container {
-          position: relative;
-          background-color: lightyellow;
-        }
         .image {
-        
          width: 100%;
          height: 250px;
          object-fit: cover;
@@ -43,12 +38,13 @@ const SearchBar: React.FC = () => {
         border-radius: 25px; /* ทำให้ช่องป้อนข้อมูลโค้งมน */
         outline: none;
         margin-top: -10px;
+        color: white;
         }
 
         .search-button {
         
         padding: 10px 20px;
-         width: auto;
+        width: auto;
         background-color: #3399FF;
         color: white;
         border: none;
