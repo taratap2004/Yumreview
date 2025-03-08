@@ -5,7 +5,7 @@ import RestaurantCard from '../components/RestaurantCard';
 
 const HomePage: React.FC = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: 'LemonChiffon' }}>
       <SearchBar />
       <CategoryButtons />
       <h2>รายการแนะนำ</h2>
