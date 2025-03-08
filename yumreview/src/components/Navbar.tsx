@@ -1,43 +1,73 @@
 'use client';
-
+import { useEffect, useState } from 'react';
+import { supabase } from '../../lib/supabase';
 import Link from 'next/link';
-import { Home, LogIn } from 'react-feather';
+import {   LogIn,  LogOut,  User } from 'react-feather';
 
-const Navbar = () => {
+
+
+export default function Navbar() {
+  const [user, setUser] = useState<{ id: string; email: string } | null>(null);
+  const [showLogout, setShowLogout] = useState(false);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user && user.email) {
+        setUser({ id: user.id, email: user.email });
+      } else {
+        setUser(null);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    window.location.href = '/';
+  };
+
   return (
-    <>
-      <nav className="flex justify-between items-center p-4 bg-white shadow-lg rounded-lg">
-        <div className="text-xl ">YumReview</div>
-        <div className="flex items-center space-x-4">
-          <Link href="/">
-            <Home size={24} className="text-gray-800 hover:text-gray-600 transition-colors duration-300" />
-          </Link>
-          <Link href="/login">
-            <LogIn size={24} className="text-gray-800 hover:text-gray-600 transition-colors duration-300" />
-          </Link>
+    <nav className="flex justify-between items-center p-3 bg-white border-gray-200 ">
+      <Link href="/">
+        <div className="text-4xl font-bold text-purple-700 ">
+          YumReview
         </div>
-      </nav>
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
-      `}</style>
+      </Link>
 
-      <style jsx>{`
-        nav {
-          padding-top: 10px;
-          padding-bottom: 15px;
-        }
-
-         .text-xl {
-         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-          font-size: 1.75rem; /* ขยายขนาดฟอนต์ */
-          font-weight: 600; /* ทำให้ฟอนต์หนาขึ้น */
-          letter-spacing: 1px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
-          line-height: 1.5; /* เพิ่มระยะห่างบรรทัดเพื่อให้ดูโปร่ง */
-          font-family: 'Poppins', sans-serif; /* ใช้ฟอนต์ Poppins */
-        }
-      `}</style>
-    </>
+      <div className="flex items-center space-x-4 ">
+        {/* ปุ่ม Profile */}
+        {user ? (
+         <div className="relative z-50">
+         <button
+           onClick={() => setShowLogout(!showLogout)}
+           className="p-2 rounded-lg hover:bg-gray-100 transition duration-200"
+         >
+           <User size={24} className="text-purple-700" />
+         </button>
+       
+         {/* เมนู Logout */}
+         {showLogout && user.id && (
+           <div className="fixed right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg ">
+             <button
+               onClick={handleLogout}
+               className="block w-full text-center px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors duration-200"
+             >
+               <LogOut size={24} className="text-purple-700" />
+             </button>
+           </div>
+         )}
+       </div>
+       
+        ) : (
+          <Link href="/login">
+            <div className="p-2 rounded-lg hover:bg-gray-100 transition duration-200">
+              <LogIn size={24} className="text-purple-700" />
+            </div>
+          </Link>
+        )}
+      </div>
+    </nav>
   );
-};
-
-export default Navbar;
+}

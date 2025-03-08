@@ -43,7 +43,7 @@ export default function AddRestaurantPage() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">คำอธิบาย (Markdown)</label>
+          <label className="block text-sm font-medium text-gray-700">คำอธิบาย</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -56,7 +56,7 @@ export default function AddRestaurantPage() {
           <input
             type="text"
             value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
+            onChange={(e) => setImageUrl(e.target.value)} 
             className="w-full p-2 border rounded-md"
             required
           />
