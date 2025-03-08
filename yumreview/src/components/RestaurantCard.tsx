@@ -34,6 +34,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ id, name, imageUrl }) =
                 >
                     {name}
                 </p>
+
             </div>
         </Link>
     );

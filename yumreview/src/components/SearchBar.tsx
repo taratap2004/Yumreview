@@ -10,7 +10,7 @@ const SearchBar: React.FC = () => {
           <input type="text" placeholder="search...." className="input" />
           <button className="search-button">ค้นหา</button>
         </div>
-          <p className="text" >ค้นหาร้านอาหารร้านอร่อยในโคราช เราคัดสรรมาให้คุณแล้ว</p>
+        <p className="text" >ค้นหาร้านอาหารร้านอร่อยในโคราช เราคัดสรรมาให้คุณแล้ว</p>
       </div>
       <style jsx>{`
         .image {
@@ -34,11 +34,13 @@ const SearchBar: React.FC = () => {
         .input {
         padding: 10px;
         width: 450px;
-        border: 1px solid #ccc;
+       border: 2px solid white;
         border-radius: 25px; /* ทำให้ช่องป้อนข้อมูลโค้งมน */
         outline: none;
         margin-top: -10px;
-        color: white;
+        color: black;
+        background-color: white; 
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
         }
 
         .search-button {
@@ -58,7 +60,7 @@ const SearchBar: React.FC = () => {
         }
         .text {
         position: absolute;
-        top: 55%;
+        top: 65%;
         left: 50%;
         transform: translateX(-50%);
         color: white;
