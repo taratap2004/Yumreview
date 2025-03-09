@@ -5,12 +5,14 @@ interface RestaurantCardProps {
     id: string; // หรือ slug สำหรับใช้ใน URL
     name: string;
     imageUrl: string; // URL ของรูปภาพ
+    location?: string;
 }
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ id, name, imageUrl }) => {
     return (
         <Link href={`/restaurants/${id}`} passHref>
             <div className="restaurant-card">
+                
                 <img
                     src={imageUrl}
                     alt={name}
