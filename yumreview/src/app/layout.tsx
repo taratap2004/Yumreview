@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'; // นำเข้า Navbar
 import "./globals.css";
+
 export default function RootLayout({
   children,
 }: {
@@ -8,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar /> {/* แสดง Navbar */}
+        <Navbar />
         {children}
       </body>
     </html>
