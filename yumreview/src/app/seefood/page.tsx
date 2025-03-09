@@ -86,6 +86,6 @@ const Seefood: React.FC = () => {
             </div>
         </div>
     );
-};;
+};
 
 export default Seefood;
