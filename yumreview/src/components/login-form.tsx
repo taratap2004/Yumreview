@@ -11,7 +11,6 @@ export default function LoginForm() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [googleLoading, setGoogleLoading] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -30,7 +29,7 @@ export default function LoginForm() {
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
-      router.push('/dashboard');
+      router.push('/');
     } catch (err) {
       setError((err as Error).message || 'Login failed. Please try again.');
     } finally {
@@ -38,22 +37,6 @@ export default function LoginForm() {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    setGoogleLoading(true);
-    setError('');
-
-    try {
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: { redirectTo: `${window.location.origin}/dashboard` },
-      });
-      if (error) throw error;
-    } catch (err) {
-      setError((err as Error).message || 'Google login failed. Please try again.');
-    } finally {
-      setGoogleLoading(false);
-    }
-  };
 
   return (
     
@@ -105,24 +88,6 @@ export default function LoginForm() {
           )}
         </button>
       </form>
-
-      <div className="flex items-center my-4">
-        <hr className="flex-grow border-gray-300" />
-        <span className="px-2 text-gray-500 text-sm">OR</span>
-        <hr className="flex-grow border-gray-300" />
-      </div>
-
-      <button
-        onClick={handleGoogleLogin}
-        disabled={googleLoading}
-        className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition flex items-center justify-center"
-      >
-        {googleLoading ? (
-          <span className="animate-spin h-4 w-4 border-t-2 border-white border-solid rounded-full"></span>
-        ) : (
-          'Login with Google'
-        )}
-      </button>
 
       <p className="text-sm text-center mt-4">
         Don&apos;t have an account?{' '}

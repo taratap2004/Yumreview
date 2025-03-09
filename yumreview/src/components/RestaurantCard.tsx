@@ -12,7 +12,6 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ id, name, imageUrl }) =
     return (
         <Link href={`/restaurants/${id}`} passHref>
             <div className="restaurant-card">
-                
                 <img
                     src={imageUrl}
                     alt={name}

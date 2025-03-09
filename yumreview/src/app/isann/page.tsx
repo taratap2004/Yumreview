@@ -31,7 +31,7 @@ const Isann: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg"className="w-full h-full object-cover" />
+                            <img src="som.jpg"className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">ส้มตำฟรุ้งฟริ้ง ซ.30กันยา</h2>
@@ -53,7 +53,7 @@ const Isann: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
+                            <img src="lap.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">ลาบนัว โคราช</h2>
@@ -75,7 +75,7 @@ const Isann: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
+                            <img src="https://th.bing.com/th/id/OIP.4GHy7qVhAuIF8V2OLyxJcgHaHa?rs=1&pid=ImgDetMain" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">ตั้งใจตำ (TungJaiTum) </h2>
