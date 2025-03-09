@@ -1,11 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-<<<<<<< HEAD
-import {supabase} from '../lib/supabase'; // ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่า Supabase client แล้ว
-=======
-import { supabase } from '../../lib/supabase'; // ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่า Supabase client แล้ว
->>>>>>> 073707474e9d031874a77c87694ce8b3df0f7101
+import { supabase } from '../app/lib/supabase'; // ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่า Supabase client แล้ว
 import Popup from './popup'; // นำเข้า Popup
 
 const SearchBar = () => {
