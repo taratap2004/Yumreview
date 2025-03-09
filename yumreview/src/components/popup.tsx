@@ -16,7 +16,7 @@ const Popup: React.FC<PopupProps> = ({ results, position, onRestaurantClick }) =
         position: 'absolute',
         top: position.top,
         left: position.left,
-        width: '450px', // กำหนดความกว้างให้เท่ากับช่องค้นหา
+        width:'550px', // กำหนดความกว้างให้เท่ากับช่องค้นหา
         backgroundColor: 'white', // พื้นหลังสีขาว
         borderRadius: '10px', // ทำให้ขอบมน
         zIndex: 1000, // ให้ป็อปอัพแสดงอยู่ด้านบน
