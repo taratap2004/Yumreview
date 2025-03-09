@@ -5,7 +5,6 @@ import Link from 'next/link';
 import {   LogIn,  LogOut,  User } from 'react-feather';
 
 
-
 export default function Navbar() {
   const [user, setUser] = useState<{ id: string; email: string } | null>(null);
   const [showLogout, setShowLogout] = useState(false);
@@ -31,9 +30,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center p-4 bg-white border-gray-200 ">
       <Link href="/">
-        <div className="text-4xl font-bold text-black ">
-          YumReview
-        </div>
+      <div className={"text-2xl font-bold text-black"}>YumReview</div>
       </Link>
 
       <div className="flex items-center space-x-4">

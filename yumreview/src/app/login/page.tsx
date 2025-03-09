@@ -21,6 +21,7 @@ export default function LoginPage() {
       setError(error.message);
     } else {
       router.push('/'); // Redirect ไปที่หน้าแรก
+      router.refresh();
     }
   };
 

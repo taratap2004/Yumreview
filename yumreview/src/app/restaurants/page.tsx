@@ -54,12 +54,6 @@ export default function RestaurantDetailPage() {
       <h1 style={{ fontSize: '2rem' }}>{restaurant.name}</h1>
       <img src={restaurant.image_url} alt={restaurant.name} className="w-full h-64 object-cover rounded-lg" />
       <div className="mt-4">
-        <p><img src="/description-icon.png" alt="Description Icon" className="w-4 h-4 inline-block mr-2"></img> {restaurant.description}</p>
-        <p><img src="/description-icon.png" alt="Description Icon" className="w-4 h-4 inline-block mr-2"></img> {restaurant.description}</p>
-        <p><img src="/description-icon.png" alt="Description Icon" className="w-4 h-4 inline-block mr-2"></img> {restaurant.description}</p>
-        <p><strong>ที่ตั้ง:</strong> {restaurant.location}</p>
-        <p><strong>เวลาเปิด-ปิด:</strong> {restaurant.opening_hours}</p>
-        <p><strong>ติดต่อ:</strong> {restaurant.contact}</p>
       </div>
     </div>
   );  
