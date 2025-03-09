@@ -5,7 +5,7 @@ const Chabu: React.FC = () => {
     return (
         <div className="bg-yellow-100 min-h-screen flex flex-col items-center justify-start py-10">
             {/* รูปภาพ */}
-            <img src="/ping.jpg" alt="PingYang" className="w-full h-[250px] object-cover rounded-lg"
+            <img src="/shabu.jpg" alt="Shabu" className="w-full h-[250px] object-cover rounded-lg"
                 style={{ marginTop: '-40px' }} />
 
             <p className="absolute top-23 left-8 text-white text-3xl font-extrabold shadow-2xl uppercase">ชาบู</p>

@@ -30,7 +30,11 @@ export default function LoginForm() {
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
+<<<<<<< HEAD
       router.push('/dashboard');
+=======
+      router.push('/');
+>>>>>>> a0584e84034ee334832b4a74cf753cda6e0e2911
     } catch (err) {
       setError((err as Error).message || 'Login failed. Please try again.');
     } finally {
