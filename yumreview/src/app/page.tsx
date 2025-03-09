@@ -2,6 +2,7 @@ import SearchBar from '../components/SearchBar';
 import CategoryButtons from '../components/CategoryButtons';
 import RestaurantCard from '../components/RestaurantCard';
 
+
 const HomePage: React.FC = () => {
   return (
     <div style={{ backgroundColor: 'LemonChiffon', borderRadius: '15px 15px  0 0' }}>

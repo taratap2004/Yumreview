@@ -1,8 +1,17 @@
 'use client';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 const CategoryButtons: React.FC = () => {
+    const router = useRouter();
     const categories = ['ปิ้งย่าง', 'ชาบู', 'ซีฟู้ด', 'อิสาน', 'ของหวาน'];
+    const handleCategoryClick = (category: string) => {
+        if (category === 'ปิ้งย่าง') {
+            router.push('/pingyang');
+        }
+
+    };
+
 
     return (
         <div className="flex justify-center items-center flex-wrap p-4">
@@ -10,6 +19,7 @@ const CategoryButtons: React.FC = () => {
                 <button
                     key={category}
                     className="category-button"
+                    onClick={() => handleCategoryClick(category)}
                 >
                     {category}
                 </button>
