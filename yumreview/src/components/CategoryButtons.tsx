@@ -8,6 +8,14 @@ const CategoryButtons: React.FC = () => {
     const handleCategoryClick = (category: string) => {
         if (category === 'ปิ้งย่าง') {
             router.push('/pingyang');
+        } else if (category === 'ชาบู') {
+            router.push('/chabu');
+        } else if (category === 'ซีฟู้ด') {
+            router.push('/seefood');
+        } else if (category === 'อิสาน') {
+            router.push('/isann');
+        } else if (category === 'ของหวาน') {
+            router.push('/sweets');
         }
 
     };

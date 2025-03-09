@@ -17,14 +17,3 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
-
-.restaurant-card {
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-radius: 0 0 10px 10px;
-}

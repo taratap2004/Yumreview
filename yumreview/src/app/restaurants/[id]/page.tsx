@@ -84,7 +84,7 @@ export default function RestaurantDetailPage() {
           <p className="text-gray-700">{restaurant.description2}</p>
         </div>
         <div className="contact-info bg-gray-100 p-4 rounded-lg text-center">
-          <p className="text-gray-800"><strong>ที่ตั้ง:</strong> {restaurant.location}</p>
+          <p className="text-gray-800"><strong>ที่ตั้ง:</strong>{restaurant.location}</p>
           <p className="text-gray-800"><strong>เวลาเปิด-ปิด:</strong> {restaurant.opening_hours}</p>
           <p className="text-gray-800"><strong>ติดต่อ:</strong> {restaurant.contact}</p>
         </div>

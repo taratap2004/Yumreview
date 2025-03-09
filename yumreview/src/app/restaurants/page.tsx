@@ -25,18 +25,24 @@ export default function RestaurantDetailPage() {
       setError(null);
 
       try {
+        console.log('Fetching restaurant with ID:', params.id); // ตรวจสอบ ID
+
         const { data, error } = await supabase
           .from('restaurants')
           .select('*')
           .eq('id', params.id)
           .single();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Supabase error:', error); // แสดงข้อผิดพลาดจาก Supabase
+          throw error;
+        }
 
+        console.log('Fetched data:', data); // ตรวจสอบข้อมูลที่ได้รับ
         setRestaurant(data as Restaurant);
       } catch (err) {
         setError('เกิดข้อผิดพลาดในการดึงข้อมูลร้านอาหาร');
-        console.error('Error:', err);
+        console.error('Error:', err); // แสดงข้อผิดพลาดทั้งหมด
       } finally {
         setLoading(false);
       }
@@ -51,10 +57,13 @@ export default function RestaurantDetailPage() {
 
   return (
     <div className="restaurant-detail">
-      <h1 style={{ fontSize: '2rem' }}>{restaurant.name}</h1>
+      <h1 className="text-3xl font-bold mb-4">{restaurant.name}</h1>
       <img src={restaurant.image_url} alt={restaurant.name} className="w-full h-64 object-cover rounded-lg" />
       <div className="mt-4">
+        <p><strong>ที่ตั้ง:</strong> {restaurant.location}</p>
+        <p><strong>เวลาเปิด-ปิด:</strong> {restaurant.opening_hours}</p>
+        <p><strong>ติดต่อ:</strong> {restaurant.contact}</p>
       </div>
     </div>
-  );  
+  );
 }
