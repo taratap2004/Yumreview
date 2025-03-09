@@ -21,7 +21,7 @@ const Pingyang: React.FC = () => {
                 width: '100%'
             }}>
                 {/* การ์ดแรก */}
-                <Link href={`/restaurants/${'02702524-f208-43e3-9e02-94eafeb82a93'}`} passHref>
+                <Link href={`/restaurants/${'8888b3b3-8d7c-4eb5-9ff0-d2427b5d8b60'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -33,17 +33,17 @@ const Pingyang: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 1" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 1</h2>
+                            <h2 className="text-xl font-bold">Shounen Yakiniku 焼肉少年</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>
                 </Link>
 
                 {/* การ์ดสอง */}
-                <Link href={`/restaurants/${'id2'}`} passHref>
+                <Link href={`/restaurants/${'c3e3770c-1ad3-4677-9b3d-ca9b425479ec'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -55,17 +55,17 @@ const Pingyang: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 2" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 2</h2>
+                            <h2 className="text-xl font-bold">GodGrilla BBQ ก็อตกริลล่า ปิ้งย่างเกาหลี</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>
                 </Link>
 
                 {/* การ์ดสาม */}
-                <Link href={`/restaurants/${'id3'}`} passHref>
+                <Link href={`/restaurants/${'1871e8f7-3ba2-4bb3-b7b1-8a80d7499d63'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -80,7 +80,7 @@ const Pingyang: React.FC = () => {
                             <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 3" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 3</h2>
+                            <h2 className="text-xl font-bold">ป๋าโก้ หมูกระทะ&ซีฟู้ด บุฟเฟ่ต์</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>

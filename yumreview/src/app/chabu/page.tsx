@@ -31,17 +31,17 @@ const Chabu: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 1" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 1</h2>
+                            <h2 className="text-xl font-bold">ชิวเล้า</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>
                 </Link>
 
                 {/* การ์ดสอง */}
-                <Link href={`/restaurants/${'id2'}`} passHref>
+                <Link href={`/restaurants/${'050845ca-eeb3-4206-b336-f361d760350b'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -53,17 +53,17 @@ const Chabu: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 2" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 2</h2>
+                            <h2 className="text-xl font-bold">Nikusen Shabu</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>
                 </Link>
 
                 {/* การ์ดสาม */}
-                <Link href={`/restaurants/${'id3'}`} passHref>
+                <Link href={`/restaurants/${'54092ee1-3098-4753-a8ae-f795e6dba852'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -75,10 +75,10 @@ const Chabu: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 3" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 3</h2>
+                            <h2 className="text-xl font-bold">Kin s The Buta</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>

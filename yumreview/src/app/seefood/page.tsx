@@ -19,7 +19,7 @@ const Seefood: React.FC = () => {
                 width: '100%'
             }}>
                 {/* การ์ดแรก */}
-                <Link href={`/restaurants/${'02702524-f208-43e3-9e02-94eafeb82a93'}`} passHref>
+                <Link href={`/restaurants/${'970ebca1-c8f3-433f-9bf3-3ae5546d5229'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -31,17 +31,17 @@ const Seefood: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 1" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg"  className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 1</h2>
+                            <h2 className="text-xl font-bold">กุ้งถังโคราช</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>
                 </Link>
 
                 {/* การ์ดสอง */}
-                <Link href={`/restaurants/${'id2'}`} passHref>
+                <Link href={`/restaurants/${'97713ce5-c7cc-4688-90e5-e3508c870b1b'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -53,17 +53,17 @@ const Seefood: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 2" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg"  className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 2</h2>
+                            <h2 className="text-xl font-bold">ย้งปูอบ โคราช </h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>
                 </Link>
 
                 {/* การ์ดสาม */}
-                <Link href={`/restaurants/${'id3'}`} passHref>
+                <Link href={`/restaurants/${'524226aa-b696-46ea-a0e4-c23cdd82bdf1'}`} passHref>
                     <div style={{
                         display: 'flex',
                         width: '70vw',
@@ -75,10 +75,10 @@ const Seefood: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 3" className="w-full h-full object-cover" />
+                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <h2 className="text-xl font-bold">ชื่อร้าน 3</h2>
+                            <h2 className="text-xl font-bold">ร้านอุดม SEAFOOD ปากช่อง</h2>
                             <p className="text-gray-600">ข้อมูลเกี่ยวกับร้านอาหาร</p>
                         </div>
                     </div>
