@@ -31,7 +31,7 @@ const Chabu: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
+                            <img src="Logochiwlao.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">ชิวเล้า</h2>
@@ -53,7 +53,7 @@ const Chabu: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
+                            <img src="niku.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">Nikusen Shabu</h2>
@@ -75,7 +75,7 @@ const Chabu: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
+                            <img src="kin.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">Kin s The Buta</h2>

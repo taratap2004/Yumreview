@@ -20,10 +20,12 @@ const HomePage: React.FC = () => {
       }}>
         รายการแนะนำ
       </h3>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', padding: '20px' }}>
-        <RestaurantCard name="ชื่อร้าน 1" id={''} imageUrl={'https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg'} />
-        <RestaurantCard name="ชื่อร้าน 2" id={'02702524-f208-43e3-9e02-94eafeb82a93'} imageUrl={'https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg'} />
-        <RestaurantCard name="ชื่อร้าน 3" id={''} imageUrl={'https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg'}/>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap : '89px', padding: '20px'  }}>
+        <RestaurantCard name="ชิวเล้า" id={'02702524-f208-43e3-9e02-94eafeb82a93'} imageUrl={'Logochiwlao.jpg'} />
+        <RestaurantCard name="ตั้งใจตำ (TungJaiTum)" id={'c53606d8-40ae-43e6-ac47-2da4667c1185'} imageUrl={'https://th.bing.com/th/id/OIP.4GHy7qVhAuIF8V2OLyxJcgHaHa?rs=1&pid=ImgDetMain'} />
+        <RestaurantCard name="ติ๋มนมสด (Tim-Nom-Sod)" id={'b63d3c1f-9e64-4783-ae9b-5dcf553e4134'} imageUrl={'tim.jpg'}/>
+        <RestaurantCard name="กุ้งถังโคราช" id={'970ebca1-c8f3-433f-9bf3-3ae5546d5229'} imageUrl={'Kung.jpg'}/>
+        <RestaurantCard name="ป๋าโก้ หมูกระทะ&ซีฟู้ด บุฟเฟ่ต์" id={'1871e8f7-3ba2-4bb3-b7b1-8a80d7499d63'} imageUrl={'pago.jpg'}/>
       </div>
 
     </div>

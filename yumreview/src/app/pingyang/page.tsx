@@ -33,7 +33,7 @@ const Pingyang: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
+                            <img src="sho.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">Shounen Yakiniku 焼肉少年</h2>
@@ -55,7 +55,7 @@ const Pingyang: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" className="w-full h-full object-cover" />
+                            <img src="got.png" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">GodGrilla BBQ ก็อตกริลล่า ปิ้งย่างเกาหลี</h2>
@@ -77,7 +77,7 @@ const Pingyang: React.FC = () => {
                         cursor: 'pointer'
                     }}>
                         <div style={{ width: '25%' }}>
-                            <img src="https://cms.dmpcdn.com/food/2023/02/23/45f22f80-b3ac-11ed-847b-5bfda9f44996_original.jpg" alt="ร้าน 3" className="w-full h-full object-cover" />
+                            <img src="pago.jpg" alt="ร้าน 3" className="w-full h-full object-cover" />
                         </div>
                         <div style={{ width: '75%', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             <h2 className="text-xl font-bold">ป๋าโก้ หมูกระทะ&ซีฟู้ด บุฟเฟ่ต์</h2>
