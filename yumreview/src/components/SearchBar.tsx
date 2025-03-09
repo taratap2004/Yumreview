@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '../lib/supabase'; // ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่า Supabase client แล้ว
-import Popup from './popup'; // นำเข้า Popup
-
-const SearchBar = () => {
+import { supabase } from '../app/lib/supabase'; // ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่า Supabase client แล้ว
+import Popup from './popup'; // Import the Popup component
+  const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   interface Restaurant {
     id: string;
