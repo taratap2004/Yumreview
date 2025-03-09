@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 const CategoryButtons: React.FC = () => {
     const router = useRouter();
-    const categories = ['ปิ้งย่าง', 'ชาบู', 'ซีฟู้ด', 'อิสาน', 'ของหวาน'];
+    const categories = ['ปิ้งย่าง', 'ชาบู', 'ซีฟู้ด', 'อีสาน', 'ของหวาน'];
     const handleCategoryClick = (category: string) => {
         if (category === 'ปิ้งย่าง') {
             router.push('/pingyang');
@@ -12,7 +12,7 @@ const CategoryButtons: React.FC = () => {
             router.push('/chabu');
         } else if (category === 'ซีฟู้ด') {
             router.push('/seefood');
-        } else if (category === 'อิสาน') {
+        } else if (category === 'อีสาน') {
             router.push('/isann');
         } else if (category === 'ของหวาน') {
             router.push('/sweets');
