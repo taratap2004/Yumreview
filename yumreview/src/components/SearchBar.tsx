@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import {supabase} from '../../lib/supabase'; // ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่า Supabase client แล้ว
+import { supabase } from '../../lib/supabase'; // ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่า Supabase client แล้ว
 import Popup from './popup'; // นำเข้า Popup
 
 const SearchBar = () => {
@@ -39,8 +39,8 @@ const SearchBar = () => {
       if (searchContainer) {
         const rect = searchContainer.getBoundingClientRect();
         setPopupPosition({
-          top: rect.bottom + window.scrollY + 10, // ตำแหน่งด้านล่างช่องค้นหา
-          left: rect.left + window.scrollX, // ตำแหน่งด้านซ้ายช่องค้นหา
+          top: rect.bottom + window.scrollY , // ตำแหน่งด้านล่างช่องค้นหา
+          left: rect.left + window.scrollX , // ตำแหน่งด้านซ้ายช่องค้นหา
         });
       }
     }
@@ -62,6 +62,7 @@ const SearchBar = () => {
             className="input"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyPress={(e) => e.key === 'Enter' && handleSearch(e)}
           />
           <button
             className="search-button"

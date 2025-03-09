@@ -19,7 +19,6 @@ const Popup: React.FC<PopupProps> = ({ results, position, onRestaurantClick }) =
         width: '450px', // กำหนดความกว้างให้เท่ากับช่องค้นหา
         backgroundColor: 'white', // พื้นหลังสีขาว
         borderRadius: '10px', // ทำให้ขอบมน
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // เพิ่มเงา
         zIndex: 1000, // ให้ป็อปอัพแสดงอยู่ด้านบน
       }}
     >
@@ -30,13 +29,19 @@ const Popup: React.FC<PopupProps> = ({ results, position, onRestaurantClick }) =
               key={restaurant.id}
               className="restaurant-card"
               onClick={() => onRestaurantClick(restaurant.id)}
+              style={{
+                padding: '10px',
+                cursor: 'pointer',
+              }}
             >
-              <h3>{restaurant.name}</h3>
-              <p>{restaurant.location}</p>
+              <h3 style={{ margin: 0 }}>{restaurant.name}</h3>
+              <p style={{ margin: 0, color: '#666' }}>{restaurant.location}</p>
             </div>
           ))
         ) : (
-          <p className="no-results">ไม่พบร้านอาหารที่คุณค้นหา</p>
+          <p className="no-results" style={{ padding: '10px', textAlign: 'center'  }}>
+            ไม่พบร้านอาหารที่คุณค้นหา
+          </p>
         )}
       </div>
     </div>,
