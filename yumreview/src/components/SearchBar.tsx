@@ -15,10 +15,10 @@ const SearchBar = () => {
   const [results, setResults] = useState<Restaurant[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
+  const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0, width: 0 });
   const router = useRouter();
 
-  const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent<HTMLButtonElement>) => {
     if (!searchTerm.trim()) return;
 
     setIsLoading(true);
@@ -34,18 +34,28 @@ const SearchBar = () => {
       setResults(data);
       setShowPopup(true);
 
-      // กำหนดตำแหน่งป็อปอัพ
-      const searchContainer = (event.target as HTMLElement).closest('.search-container');
-      if (searchContainer) {
-        const rect = searchContainer.getBoundingClientRect();
-        setPopupPosition({
-          top: rect.bottom + window.scrollY , // ตำแหน่งด้านล่างช่องค้นหา
-          left: rect.left + window.scrollX , // ตำแหน่งด้านซ้ายช่องค้นหา
-        });
+      // ตรวจสอบว่า event.target มีค่าและเป็น HTMLElement
+      const target = event.target as HTMLElement;
+      if (target && target.closest) {
+        const searchContainer = target.closest('.search-container');
+        if (searchContainer) {
+          const rect = searchContainer.getBoundingClientRect();
+          setPopupPosition({
+            top: rect.bottom + window.scrollY + 10, // ตำแหน่งด้านล่างช่องค้นหา
+            left: rect.left + window.scrollX, // ตำแหน่งด้านซ้ายช่องค้นหา
+            width: rect.width + 10, // ความกว้างเท่ากับช่องค้นหา
+          });
+        }
       }
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    if (!e.target.value.trim()) {
+      setShowPopup(false); // ซ่อนป็อปอัพเมื่อลบข้อความ
+    }
+  };
   const handleRestaurantClick = (id: string) => {
     router.push(`/restaurants/${id}`);
     setShowPopup(false); // ปิดป็อปอัพเมื่อคลิกร้าน
@@ -61,12 +71,12 @@ const SearchBar = () => {
             placeholder="search...."
             className="input"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={handleChange}
             onKeyPress={(e) => e.key === 'Enter' && handleSearch(e)}
           />
           <button
             className="search-button"
-            onClick={() => handleSearch({ key: 'Enter' } as React.KeyboardEvent<HTMLInputElement>)}
+            onClick={(e) => handleSearch(e)}
             disabled={isLoading}
           >
             {isLoading ? 'กำลังค้นหา...' : 'ค้นหา'}
