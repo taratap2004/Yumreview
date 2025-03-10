@@ -34,7 +34,7 @@ const CategoryButtons: React.FC = () => {
             ))}
             <style jsx>{`
          .category-button {
-                    background-color: white;
+                    background-color: orange; /* สีพื้นหลังปุ่ม */
                     color: #000000; /* ใช้สีเทอควอยซ์สำหรับตัวหนังสือ */
                     font-family: 'Poppins', sans-serif; /* ใช้ฟอนต์ Poppins */
                     font-size: 1.1rem; /* ขนาดฟอนต์ */
