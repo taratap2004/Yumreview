@@ -47,7 +47,7 @@ export default function LoginForm() {
       </div>
 
       {/* Login Form */}
-      <div className="relative z-10 w-full max-w-md bg-white/90 border border-white/40 shadow-2xl rounded-3xl p-8">
+      <div className="relative z-10 w-full max-w-md  border-white/40 shadow-2xl rounded-3xl p-8">
         <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">Sign In to Your Account</h2>
 
         {error && (
