@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between items-center p-4 bg-white border-b border-gray-200">
       <Link href="/">
-        <div className="text-4xl font-extrabold bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text">
+        <div className="text-4xl font-extrabold bg-gradient-to-r from-red-900 to-amber-700 text-transparent bg-clip-text">
           YumReview
         </div>
       </Link>
